@@ -1,0 +1,11 @@
+public/*
+.storybook
+.next
+yarn.lock
+.gitignore
+.eslintcache
+.gitattributes
+coverage
+storybook-static
+.tsBuildInfoFile
+.stylelintcache

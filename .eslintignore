@@ -1,0 +1,14 @@
+public/*
+.next
+yarn.lock
+.gitignore
+.prettierignore
+.gitattributes
+coverage
+.tsBuildInfoFile
+.stylelintcache
+vitest.config.ts
+vitest.setup.ts
+next.config.js
+stylelint.config.js
+next-env.d.ts
