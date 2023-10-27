@@ -1,0 +1,75 @@
+@use 'src/theme' as T;
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: T.$font-body;
+  line-height: calc(1em + 0.5rem);
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  color: T.$color-white;
+  isolation: isolate;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: break-word;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+optgroup,
+body,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  font-family: T.$font-body;
+  font-size: T.$font-size-xs;
+  font-weight: T.$font-weight-medium;
+}
+
+a,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus {
+  outline: 4px solid T.$color-focus;
+  outline-offset: 1px;
+}
+
+:focus-visible {
+  outline: 4px solid T.$color-focus;
+  outline-offset: 1px;
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: none;
+}
