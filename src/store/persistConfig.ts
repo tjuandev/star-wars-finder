@@ -8,14 +8,14 @@ import {
   REGISTER,
   REHYDRATE
 } from 'redux-persist'
-import asyncSessionStorage from 'redux-persist/lib/storage'
 import * as Reducers from './reducers'
+import { storage } from './storage'
 
 const whitelist = ['dynamicForm']
 
 const persistConfig = {
   key: 'root',
-  storage: asyncSessionStorage,
+  storage,
   whitelist
 }
 
