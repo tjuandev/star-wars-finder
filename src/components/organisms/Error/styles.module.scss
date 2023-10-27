@@ -1,0 +1,32 @@
+@use 'src/theme' as T;
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: T.$spacing-sm;
+}
+
+.header {
+  margin-bottom: T.$spacing-xxl;
+  font-size: T.$font-size-xxxl;
+  font-weight: T.$font-weight-semi-bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: T.$spacing-macro;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+.title {
+  font-size: T.$font-size-lg;
+  font-weight: T.$font-weight-regular;
+  text-align: center;
+}
