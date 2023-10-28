@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react'
 import viewports from './viewports'
-import '../src/theme/reset.scss'
 import './style.scss'
+import '../src/theme/global.scss'
 import MainProvider from '../src/providers/MainProvider'
 
 const preview: Preview = {
