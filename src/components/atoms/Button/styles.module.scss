@@ -1,0 +1,30 @@
+@use 'src/theme' as T;
+
+.button {
+  padding: T.$spacing-sm T.$spacing-xs;
+  background-color: T.$color-yellow;
+  font-size: T.$font-size-xs;
+  border-radius: 4px;
+  display: flex;
+  gap: T.$spacing-nano;
+  align-items: center;
+  transition: opacity T.$base-transition;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.attach_left {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.attach_right {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
