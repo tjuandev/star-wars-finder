@@ -1,7 +1,7 @@
 import { Logo } from 'components/atoms'
 import S from './styles.module.scss'
-import { categoriesList } from './constants'
 import { Card } from 'components/molecules'
+import { categoriesList } from 'constant'
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
             src={src}
             title={title}
             alt={`${title}'s image`}
-            href={title}
+            href={`/categories/${title}`}
           />
         ))}
       </div>
