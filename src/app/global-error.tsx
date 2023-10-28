@@ -12,7 +12,7 @@ const GlobalError = ({ error }: ErrorProps) => {
   }, [error])
 
   return (
-    <html lang="pt-BR">
+    <html lang="en-US">
       <body className={poppins.className}>
         <Error />
       </body>

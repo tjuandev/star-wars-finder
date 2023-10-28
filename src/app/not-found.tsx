@@ -5,9 +5,11 @@ import poppins from 'theme/fontFamily'
 
 const NotFound = () => {
   return (
-    <body className={poppins.className}>
-      <Error />
-    </body>
+    <html lang="en-US">
+      <body className={poppins.className}>
+        <Error />
+      </body>
+    </html>
   )
 }
 
