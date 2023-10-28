@@ -12,7 +12,13 @@ const Home = () => {
       </h4>
       <div className={S.categories}>
         {categoriesList.map(({ title, src }) => (
-          <Card key={title} src={src} title={title} alt={`${title}'s image`} />
+          <Card
+            key={title}
+            src={src}
+            title={title}
+            alt={`${title}'s image`}
+            href={title}
+          />
         ))}
       </div>
     </div>

@@ -15,6 +15,7 @@ export const Default: Story = {
   args: {
     src: people,
     alt: 'People category',
-    title: 'People'
+    title: 'People',
+    href: '/people'
   }
 }
