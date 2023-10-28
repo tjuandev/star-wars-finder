@@ -17,10 +17,8 @@ html {
   font-size: 62.5%;
 }
 
-body,
-.docs-story > div {
-  background-image: url('/images/stars-background.png');
-  background-color: T.$color-black;
+.docs-story > div, #storybook-root, body.sb-show-main {
+  background-color: T.$color-black !important;
 }
 
 body {
