@@ -1,0 +1,23 @@
+@use 'src/theme' as T;
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info_text {
+  margin-top: T.$spacing-giga;
+  font-size: T.$font-size-lg;
+  font-weight: T.$font-weight-medium;
+  width: 482px;
+  text-align: center;
+
+  > strong {
+    font-weight: T.$font-weight-bold;
+    color: T.$color-yellow;
+  }
+}
