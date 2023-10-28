@@ -13,8 +13,10 @@
   margin-top: T.$spacing-giga;
   font-size: T.$font-size-lg;
   font-weight: T.$font-weight-medium;
-  width: 482px;
+  max-width: 526px;
+  width: 100%;
   text-align: center;
+  letter-spacing: 6px;
 
   > strong {
     font-weight: T.$font-weight-bold;
