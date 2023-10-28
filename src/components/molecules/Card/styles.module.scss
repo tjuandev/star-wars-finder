@@ -48,8 +48,8 @@ $common-box-shadow: 0 0 16px;
 .img {
   transition: transform 0.3s ease-in-out;
   position: absolute;
-  top: 15%;
-  left: 5%;
+  bottom: 0;
+  right: 0;
   filter: saturate(0);
 }
 

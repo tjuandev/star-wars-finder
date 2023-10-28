@@ -11,6 +11,7 @@ export const Card = ({ alt, src, title, imgHeight, imgWidth }: CardProps) => (
         className={S.img}
         width={imgWidth}
         height={imgHeight}
+        priority
       />
     </div>
     <h5 className={S.title}>{title}</h5>

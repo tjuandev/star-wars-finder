@@ -21,3 +21,9 @@
     color: T.$color-yellow;
   }
 }
+
+.categories {
+  display: flex;
+  margin-top: T.$spacing-mega;
+  gap: T.$spacing-macro;
+}

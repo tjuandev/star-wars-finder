@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from '..'
-import darth_vader from '@/public/images/darth_vader.png'
+import people from '@/public/images/categories/people.png'
 
 const meta = {
   title: 'Molecules/Card',
@@ -13,8 +13,8 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    src: darth_vader,
-    alt: 'Darth Vader',
+    src: people,
+    alt: 'People category',
     title: 'People'
   }
 }
