@@ -1,9 +1,17 @@
 import S from './styles.module.scss'
 import type { CardProps } from './types'
 import Image from 'next/image'
+import Link from 'next/link'
 
-export const Card = ({ alt, src, title, imgHeight, imgWidth }: CardProps) => (
-  <button className={S.container} type="button">
+export const Card = ({
+  alt,
+  src,
+  title,
+  imgHeight,
+  imgWidth,
+  href
+}: CardProps) => (
+  <Link href={href} className={S.container}>
     <div className={S.card}>
       <Image
         src={src}
@@ -15,5 +23,5 @@ export const Card = ({ alt, src, title, imgHeight, imgWidth }: CardProps) => (
       />
     </div>
     <h5 className={S.title}>{title}</h5>
-  </button>
+  </Link>
 )
