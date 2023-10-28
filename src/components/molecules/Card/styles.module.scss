@@ -1,0 +1,63 @@
+@use 'src/theme' as T;
+
+$transition-speed: 0.25s ease-in-out;
+$common-box-shadow: 0 0 16px;
+
+@mixin box-shadow($color: rgba(255, 255, 255, 0.5)) {
+  box-shadow: $common-box-shadow $color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: T.$spacing-xs;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+
+    > .card {
+      @include box-shadow(rgba(255, 200, 0, 0.5));
+    }
+
+    img {
+      filter: saturate(1);
+      transform: scale(1.2);
+    }
+
+    > h5 {
+      color: T.$color-yellow;
+    }
+  }
+}
+
+.card {
+  color: T.$color-black;
+  border-radius: 4px;
+  @include box-shadow;
+
+  border: 2px solid T.$color-black;
+  position: relative;
+  width: 168px;
+  height: 240px;
+  overflow: hidden;
+  transition: box-shadow $transition-speed;
+}
+
+.img {
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  filter: saturate(0);
+}
+
+.title {
+  transition: color $transition-speed;
+  font-size: T.$font-size-lg;
+  color: T.$color-white;
+  font-weight: T.$font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+}

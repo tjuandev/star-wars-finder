@@ -17,9 +17,15 @@ html {
   font-size: 62.5%;
 }
 
-.docs-story > div, #storybook-root, body.sb-show-main {
+/* stylelint-disable */
+
+.docs-story > div,
+#storybook-root,
+body.sb-show-main {
   background-color: T.$color-black !important;
 }
+
+/* stylelint-enable */
 
 body {
   display: flex;
@@ -40,6 +46,12 @@ h4,
 h5,
 h6 {
   word-break: break-word;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
 }
 
 b,

@@ -48,7 +48,7 @@ module.exports = {
     'plugin/no-low-performance-animation-properties': [
       true,
       {
-        ignoreProperties: ['background-color'],
+        ignoreProperties: ['background-color', 'color'],
         severity: 'warning'
       }
     ]
