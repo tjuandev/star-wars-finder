@@ -1,6 +1,8 @@
+import S from './styles.module.scss'
 import { redirect } from 'next/navigation'
 import { categoriesList } from 'constant'
 import type { PageProps } from './types'
+import { Logo } from 'components/atoms'
 
 const Category = ({ params: { category } }: PageProps) => {
   const isValidCategory = categoriesList.find(({ title }) => title === category)
@@ -9,7 +11,15 @@ const Category = ({ params: { category } }: PageProps) => {
     redirect('/not-found')
   }
 
-  return <div>{category}</div>
+  return (
+    <div>
+      <header className={S.header}>
+        <Logo />
+        <h5>{category}</h5>
+      </header>
+      <main></main>
+    </div>
+  )
 }
 
 export default Category

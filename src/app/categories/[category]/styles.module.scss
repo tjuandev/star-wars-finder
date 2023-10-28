@@ -1,0 +1,15 @@
+@use 'src/theme' as T;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:  T.$spacing-mega;
+
+  > h5 {
+    margin-top: T.$spacing-xxl;
+    font-size: T.$font-size-lg;
+    letter-spacing: T.$font-letter-spacing-sm;
+    text-transform: uppercase;
+  }
+}
