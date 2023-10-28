@@ -16,7 +16,7 @@
   max-width: 526px;
   width: 100%;
   text-align: center;
-  letter-spacing: 6px;
+  letter-spacing: T.$font-letter-spacing-lg;
 
   > strong {
     font-weight: T.$font-weight-bold;
