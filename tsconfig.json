@@ -34,8 +34,18 @@
         "name": "next"
       }
     ],
-    "types": ["vite/client", "vitest/globals"]
+    "types": ["vite/client", "vitest/globals"],
+    "paths": {
+      "@/*": ["../*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "src/@types/**/*.d.ts", "./vitest.setup.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "src/@types/**/*.d.ts",
+    "./vitest.setup.ts"
+  ],
   "exclude": ["node_modules", ".next", "src/**/*.js"]
 }
