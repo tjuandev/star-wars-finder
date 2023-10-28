@@ -1,6 +1,5 @@
 @use 'src/theme' as T;
 
-$transition-speed: 0.25s ease-in-out;
 $common-box-shadow: 0 0 16px;
 
 @mixin box-shadow($color: rgba(255, 255, 255, 0.5)) {
@@ -42,7 +41,7 @@ $common-box-shadow: 0 0 16px;
   width: 168px;
   height: 240px;
   overflow: hidden;
-  transition: box-shadow $transition-speed;
+  transition: box-shadow T.$base-transition;
 }
 
 .img {
@@ -54,7 +53,7 @@ $common-box-shadow: 0 0 16px;
 }
 
 .title {
-  transition: color $transition-speed;
+  transition: color T.$base-transition;
   font-size: T.$font-size-lg;
   color: T.$color-white;
   font-weight: T.$font-weight-medium;

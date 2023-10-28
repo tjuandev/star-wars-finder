@@ -84,7 +84,7 @@ a:active {
 
 :focus-visible {
   outline: 4px solid T.$color-focus;
-  outline-offset: 1px;
+  outline-offset: 2px;
 }
 
 :focus:not(:focus-visible) {
