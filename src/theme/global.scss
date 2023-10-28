@@ -48,10 +48,14 @@ h6 {
   word-break: break-word;
 }
 
-button {
-  cursor: pointer;
+button,
+input {
   border: 0;
   background: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 b,
@@ -84,7 +88,7 @@ a:active {
 
 :focus-visible {
   outline: 4px solid T.$color-focus;
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 :focus:not(:focus-visible) {

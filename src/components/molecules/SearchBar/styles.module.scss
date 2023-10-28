@@ -1,0 +1,25 @@
+@use 'src/theme' as T;
+
+.container {
+  color: T.$color-black;
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  padding: T.$spacing-md;
+  height: 64px;
+  color: T.$color-white;
+  background-color: T.$color-gray;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  transition: opacity T.$base-transition;
+
+  &::placeholder {
+    font-style: italic;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
