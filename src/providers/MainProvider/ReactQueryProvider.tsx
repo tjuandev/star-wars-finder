@@ -11,8 +11,7 @@ export const ReactQueryProvider = ({
   const [queryClient] = useState(() => new QueryClient())
 
   const isDev = process.env.NODE_ENV === 'development'
-  const hasToShowDevTools =
-    isDev && typeof window !== 'undefined' && showReactQueryDevtools
+  const hasToShowDevTools = isDev && showReactQueryDevtools
 
   return (
     <QueryClientProvider client={queryClient}>
