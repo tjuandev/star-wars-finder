@@ -1,3 +1,4 @@
+'use client'
 import S from './styles.module.scss'
 import { useState } from 'react'
 import type { AccordionProps } from './types'
