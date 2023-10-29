@@ -5,7 +5,8 @@ import type { FormEvent } from 'react'
 
 export const SearchBar = ({
   onSearch,
-  placeholder = 'Search here...'
+  placeholder = 'Search here...',
+  helpText
 }: SearchBarProps) => {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -14,16 +15,19 @@ export const SearchBar = ({
   }
 
   return (
-    <form className={S.container} onSubmit={onSubmit}>
-      <input
-        name="search"
-        className={S.input}
-        type="text"
-        placeholder={placeholder}
-      />
-      <Button type="submit" attachPos="left" icon={<LightsaberIcon />}>
-        Search
-      </Button>
+    <form className={S.container} onSubmit={onSubmit} role="search">
+      <div>
+        <input
+          name="search"
+          className={S.input}
+          type="search"
+          placeholder={placeholder}
+        />
+        <Button type="submit" attachPos="left" icon={<LightsaberIcon />}>
+          Search
+        </Button>
+      </div>
+      <div className={S.help_text}>{helpText}</div>
     </form>
   )
 }

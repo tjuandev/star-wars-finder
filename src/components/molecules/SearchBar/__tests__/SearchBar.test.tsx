@@ -13,11 +13,27 @@ describe('[Component:Molecules] SearchBar', () => {
       <SearchBar placeholder="Search here" onSearch={onSearch} />
     )
 
-    const input = screen.getByPlaceholderText(/search here/i)
+    const input = screen.getByRole('searchbox')
+    const searchButton = screen.getByRole('button', { name: /search/i })
 
     await user.type(input, 'search')
-    await user.click(screen.getByRole('button', { name: /search/i }))
+    await user.click(searchButton)
 
     expect(onSearch).toHaveBeenCalledWith('search')
+  })
+
+  it('Should render helpText', () => {
+    const helpText = 'helpText'
+    const onSearch = vi.fn()
+
+    renderWithProviders(
+      <SearchBar
+        placeholder="Search here"
+        helpText={helpText}
+        onSearch={onSearch}
+      />
+    )
+
+    expect(screen.getByText(helpText)).toBeInTheDocument()
   })
 })
