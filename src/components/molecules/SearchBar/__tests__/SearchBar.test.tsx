@@ -8,13 +8,16 @@ describe('[Component:Molecules] SearchBar', () => {
 
   it('should call onSearch when submit form', async () => {
     const onSearch = vi.fn()
-    const onChange = vi.fn()
 
     renderWithProviders(
-      <SearchBar value="value" onSearch={onSearch} onChange={onChange} />
+      <SearchBar placeholder="Search here" onSearch={onSearch} />
     )
 
+    const input = screen.getByPlaceholderText(/search here/i)
+
+    await user.type(input, 'search')
     await user.click(screen.getByRole('button', { name: /search/i }))
-    expect(onSearch).toHaveBeenCalledTimes(1)
+
+    expect(onSearch).toHaveBeenCalledWith('search')
   })
 })
