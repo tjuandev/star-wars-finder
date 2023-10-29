@@ -7,7 +7,7 @@ import MainProvider from '../src/providers/MainProvider'
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <MainProvider>
+      <MainProvider showReactQueryDevtools={false}>
         <Story />
       </MainProvider>
     )

@@ -4,12 +4,19 @@ import type { MainProvidersProps } from './types'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useState } from 'react'
 
-export const ReactQueryProvider = ({ children }: MainProvidersProps) => {
+export const ReactQueryProvider = ({
+  children,
+  showReactQueryDevtools = true
+}: MainProvidersProps) => {
   const [queryClient] = useState(() => new QueryClient())
+
+  const isDev = process.env.NODE_ENV === 'development'
+  const hasToShowDevTools =
+    isDev && typeof window !== 'undefined' && showReactQueryDevtools
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {hasToShowDevTools && <ReactQueryDevtools initialIsOpen={false} />}
       {children}
     </QueryClientProvider>
   )
