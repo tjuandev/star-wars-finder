@@ -1,15 +1,77 @@
 @use 'src/theme' as T;
 
+.container {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: T.$spacing-xxl;
+  margin: T.$spacing-mega 0;
+
+  > header,
+  main {
+    max-width: T.$window-lg;
+    width: 100%;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: T.$spacing-mega;
 
   > h5 {
     margin-top: T.$spacing-xxl;
+    margin-bottom: T.$spacing-sm;
     font-size: T.$font-size-lg;
     letter-spacing: T.$font-letter-spacing-sm;
     text-transform: uppercase;
   }
+}
+
+.search_help_text {
+  a {
+    color: T.$color-yellow;
+    font-weight: T.$font-weight-bold;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: T.$spacing-md;
+  align-items: center;
+  height: 100%;
+  max-height: 500px;
+  overflow: auto;
+
+  .loader {
+    width: 110px;
+  }
+}
+
+.accordion {
+  &_badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: T.$spacing-micro;
+  }
+
+  &_title {
+    display: flex;
+    gap: T.$spacing-micro;
+    align-items: center;
+    font-size: T.$font-size-md;
+
+    > strong {
+      color: T.$color-yellow;
+    }
+  }
+}
+
+.badge_content {
+  text-transform: capitalize;
 }

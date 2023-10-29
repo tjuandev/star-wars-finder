@@ -1,7 +1,6 @@
 import renderWithProviders from 'testHelpers/providers/components'
 import Category from '../page'
 import { redirect } from 'next/navigation'
-import { Categories } from 'constant'
 import { screen } from '@testing-library/react'
 import event from 'testHelpers/providers/helpFunctions'
 
@@ -28,7 +27,7 @@ describe('Page Category', () => {
     renderWithProviders(
       <Category
         params={{
-          category: Categories.People
+          category: 'people'
         }}
       />
     )
@@ -48,7 +47,7 @@ describe('Page Category', () => {
     renderWithProviders(
       <Category
         params={{
-          category: Categories.People
+          category: 'people'
         }}
       />
     )
