@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     title: 'Accordion title',
-    content:
+    children:
       'Accordion content Accordion content Accordion content Accordion content Accordion content Accordion content'
   }
 }

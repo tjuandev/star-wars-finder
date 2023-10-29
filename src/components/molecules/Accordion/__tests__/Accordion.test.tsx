@@ -11,7 +11,7 @@ describe('[Component:Molecules] Accordion', () => {
     const content =
       'Accordion content Accordion content Accordion content Accordion content Accordion content Accordion content'
 
-    renderWithProviders(<Accordion title={title} content={content} />)
+    renderWithProviders(<Accordion title={title}>{content}</Accordion>)
 
     const accordionHeader = screen.getByRole('button')
     let accordionContent = screen.queryByText(content)

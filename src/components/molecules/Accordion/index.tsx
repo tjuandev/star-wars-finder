@@ -5,7 +5,7 @@ import type { AccordionProps } from './types'
 import { ChevronIcon } from 'components/atoms'
 import clsx from 'clsx'
 
-export const Accordion = ({ title, content }: AccordionProps) => {
+export const Accordion = ({ title, children }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -22,7 +22,7 @@ export const Accordion = ({ title, content }: AccordionProps) => {
         <ChevronIcon className={clsx(S.accordion_icon, isOpen && S.open)} />
       </button>
       <div className={clsx(S.accordion_content, isOpen && S.open)}>
-        {isOpen && content}
+        {isOpen && children}
       </div>
     </div>
   )
