@@ -15,6 +15,8 @@ export const Accordion = ({ title, content }: AccordionProps) => {
         onClick={() => {
           setIsOpen(!isOpen)
         }}
+        aria-label={isOpen ? 'Open' : 'Close'}
+        aria-expanded={isOpen}
       >
         {title}
         <ChevronIcon className={clsx(S.accordion_icon, isOpen && S.open)} />

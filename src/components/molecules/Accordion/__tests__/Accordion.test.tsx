@@ -13,7 +13,7 @@ describe('[Component:Molecules] Accordion', () => {
 
     renderWithProviders(<Accordion title={title} content={content} />)
 
-    const accordionHeader = screen.getByText(title)
+    const accordionHeader = screen.getByRole('button')
     let accordionContent = screen.queryByText(content)
 
     expect(accordionContent).not.toBeInTheDocument()
