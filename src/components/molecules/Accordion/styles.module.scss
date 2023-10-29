@@ -1,0 +1,44 @@
+@use 'src/theme' as T;
+
+.accordion {
+  border-radius: 4px;
+  overflow: hidden;
+  background: T.$color-gray;
+  width: 100%;
+
+  &_header {
+    width: 100%;
+    padding: T.$spacing-xs;
+    color: T.$color-white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_icon {
+    width: 24px;
+    height: 24px;
+    fill: T.$color-white;
+    transition: transform T.$base-transition;
+    transform: rotate(0deg);
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &_content {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-height T.$base-transition,
+      opacity T.$base-transition;
+
+    &.open {
+      padding: T.$spacing-xs;
+      max-height: fit-content;
+      opacity: 1;
+    }
+  }
+}
