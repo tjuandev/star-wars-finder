@@ -5,41 +5,32 @@ import vehicles from '@/public/images/categories/vehicles.png'
 import species from '@/public/images/categories/species.png'
 import planets from '@/public/images/categories/planets.png'
 
-export enum Categories {
-  People = 'people',
-  Films = 'films',
-  Starships = 'starships',
-  Vehicles = 'vehicles',
-  Species = 'species',
-  Planets = 'planets'
-}
-
 export const categoriesList: Array<{
-  title: Categories
+  title: StarWarsCategories
   src: string
 }> = [
   {
-    title: Categories.People,
+    title: 'people',
     src: people
   },
   {
-    title: Categories.Films,
+    title: 'films',
     src: films
   },
   {
-    title: Categories.Starships,
+    title: 'starships',
     src: starships
   },
   {
-    title: Categories.Vehicles,
+    title: 'vehicles',
     src: vehicles
   },
   {
-    title: Categories.Species,
+    title: 'species',
     src: species
   },
   {
-    title: Categories.Planets,
+    title: 'planets',
     src: planets
   }
 ]
