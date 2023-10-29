@@ -1,0 +1,9 @@
+@use 'src/theme' as T;
+
+.container {
+  background-color: T.$color-dark-gray;
+  color: T.$color-white;
+  border-radius: 88px;
+  padding: T.$spacing-nano T.$spacing-xxs;
+  font-size: T.$font-size-xxs;
+}
