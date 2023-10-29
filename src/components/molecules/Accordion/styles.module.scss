@@ -12,6 +12,10 @@
     color: T.$color-white;
     display: flex;
     justify-content: space-between;
+
+    &:focus {
+      outline-offset: -4px;
+    }
   }
 
   &_icon {
@@ -39,6 +43,7 @@
       padding: T.$spacing-xs;
       max-height: fit-content;
       opacity: 1;
+      border-top: 1px solid T.$color-light-gray;
     }
   }
 }
