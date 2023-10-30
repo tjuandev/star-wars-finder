@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect } from 'react'
-import Error from 'components/organisms/Error'
 import poppins from 'theme/fontFamily'
 import type { ErrorProps } from './types'
+import { ErrorMessage } from 'components/molecules'
 
 const GlobalError = ({ error }: ErrorProps) => {
   useEffect(() => {
@@ -14,7 +14,10 @@ const GlobalError = ({ error }: ErrorProps) => {
   return (
     <html lang="en-US">
       <body className={poppins.className}>
-        <Error />
+        <ErrorMessage
+          title="Something went wrong"
+          message="Please try again later."
+        />
       </body>
     </html>
   )
