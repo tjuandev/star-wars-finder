@@ -11,7 +11,7 @@ export interface CategoryResponse {
 export interface AdaptedCategoryData {
   name: string
   details: Record<string, string>
-  id?: string
+  id: string
   title?: string
 }
 

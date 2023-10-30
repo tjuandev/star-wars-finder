@@ -1,7 +1,7 @@
-type Item = {
+export type Item = {
   id: string
-  name: string
-  details: Record<string, string | string[]>
+  name?: string
+  details?: Record<string, string | string[]>
   count?: number
 }
 

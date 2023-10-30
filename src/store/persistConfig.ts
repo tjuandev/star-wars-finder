@@ -11,7 +11,7 @@ import {
 import * as Reducers from './reducers'
 import { storage } from './storage'
 
-const whitelist = ['popularCategories']
+const whitelist = ['popularSearches']
 
 const persistConfig = {
   key: 'root',

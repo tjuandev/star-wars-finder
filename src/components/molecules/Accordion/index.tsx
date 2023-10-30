@@ -5,7 +5,7 @@ import type { AccordionProps } from './types'
 import { ChevronIcon } from 'components/atoms'
 import clsx from 'clsx'
 
-export const Accordion = ({ title, children }: AccordionProps) => {
+export const Accordion = ({ title, children, onOpen }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -13,7 +13,15 @@ export const Accordion = ({ title, children }: AccordionProps) => {
       <button
         className={S.accordion_header}
         onClick={() => {
-          setIsOpen(!isOpen)
+          setIsOpen(prevState => {
+            const newState = !prevState
+
+            if (newState) {
+              onOpen?.()
+            }
+
+            return newState
+          })
         }}
         aria-label={isOpen ? 'Open' : 'Close'}
         aria-expanded={isOpen}

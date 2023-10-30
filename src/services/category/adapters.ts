@@ -10,7 +10,7 @@ export const adaptResponse = (
   const { results } = response
 
   return results.map(result => {
-    const id = result.url.split('/')[5]
+    const id = result.url.split('/')[5] || ''
 
     const details = Object.entries(result).reduce<Record<string, string>>(
       (acc, [key, value]) => {
