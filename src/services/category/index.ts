@@ -1,21 +1,26 @@
 import { httpClient } from 'lib/httpClient'
-import { useFetch } from 'lib/reactQuery'
+import { useFetch, useParallelFetch } from 'lib/reactQuery'
 import type {
   CategoryResponse,
   SearchCategoryProps,
-  UseSearchCategoryProps
+  UseSearchCategoryProps,
+  useSearchParallelCategoriesProps
 } from './types'
 import { adaptResponse } from './adapters'
 
 const searchCategory = async ({
   category,
-  searchValue
+  searchValue,
+  id
 }: SearchCategoryProps) => {
-  const { data } = await httpClient.get<CategoryResponse>(`/${category}`, {
-    params: {
-      search: searchValue
+  const { data } = await httpClient.get<CategoryResponse>(
+    `/${category}/${id}`,
+    {
+      params: {
+        search: searchValue
+      }
     }
-  })
+  )
   return data
 }
 
@@ -32,4 +37,24 @@ export const useSearchCategory = ({
   const data = adaptResponse(response)
 
   return { data, ...result }
+}
+
+export const useSearchParallelCategories = (
+  ids: useSearchParallelCategoriesProps
+) => {
+  const results = useParallelFetch<CategoryResponse>(
+    ids.map(id => ({
+      queryKey: ['category', id],
+      queryFn: async () =>
+        await searchCategory({
+          id
+        }),
+      enabled: !!id
+    }))
+  )
+
+  const adaptedData = results.map(result => adaptResponse(result.data))
+  const data = adaptedData.reduce((acc, val) => acc.concat(val), [])
+
+  return { data }
 }

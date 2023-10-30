@@ -8,6 +8,7 @@ import { Accordion, SearchBar } from 'components/molecules'
 import Link from 'next/link'
 import { useSearchCategory } from 'services/category'
 import { useState } from 'react'
+import { usePopularSearches } from 'store/popularSearchesSlice'
 
 const SMALL_BADGE_LENGTH = 50
 
@@ -19,6 +20,8 @@ const SearchHelpText = () => (
 
 export const Main = ({ category, searchValue }: MainProps) => {
   const { data, isLoading } = useSearchCategory({ category, searchValue })
+
+  const { addToRanking } = usePopularSearches()
 
   return (
     <main className={S.main}>
@@ -41,6 +44,7 @@ export const Main = ({ category, searchValue }: MainProps) => {
           return (
             <Accordion
               key={name}
+              onOpen={() => addToRanking({ category, id })}
               title={
                 <p className={S.accordion_title}>
                   #{id}

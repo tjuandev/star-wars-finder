@@ -20,4 +20,8 @@ export interface UseSearchCategoryProps {
   searchValue: string | null
 }
 
-export type SearchCategoryProps = UseSearchCategoryProps
+export type useSearchParallelCategoriesProps = string[]
+
+export type SearchCategoryProps = Partial<UseSearchCategoryProps> & {
+  id?: string
+}

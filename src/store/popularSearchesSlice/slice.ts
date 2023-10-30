@@ -41,22 +41,12 @@ const popularSearchesSlice = createSlice({
       } else {
         const newItem: Item = {
           id,
-          ...restOfPayload,
           count: (restOfPayload.count || 0) + 1
         }
         state.data[category].push(newItem)
       }
 
       state.data[category].sort(customComparator)
-
-      if (state.data[category].length > 6) {
-        state.data[category] = state.data[category].slice(0, 6)
-      }
-
-      state.data[category] = state.data[category].map(item => ({
-        id: item.id,
-        count: item.count
-      }))
     }
   }
 })
