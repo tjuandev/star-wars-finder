@@ -11,7 +11,7 @@ import {
 import * as Reducers from './reducers'
 import { storage } from './storage'
 
-const whitelist = ['dynamicForm']
+const whitelist = ['popularCategories']
 
 const persistConfig = {
   key: 'root',

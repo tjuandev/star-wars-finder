@@ -1,1 +1,1 @@
-export { dynamicForm } from './exampleSlice/slice'
+export { popularSearches } from './popularSearchesSlice/slice'
