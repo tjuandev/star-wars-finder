@@ -1,14 +1,22 @@
 @use 'src/theme' as T;
 
 .button {
-  padding: T.$spacing-sm T.$spacing-xs;
   background-color: T.$color-yellow;
-  font-size: T.$font-size-xs;
   border-radius: 4px;
   display: flex;
   gap: T.$spacing-nano;
   align-items: center;
   transition: opacity T.$base-transition;
+
+  &_md {
+    padding: T.$spacing-sm T.$spacing-xs;
+    font-size: T.$font-size-xs;
+  }
+
+  &_sm {
+    padding: T.$spacing-xs T.$spacing-xxs;
+    font-size: T.$font-size-xxs;
+  }
 
   &:hover {
     opacity: 0.7;

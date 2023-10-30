@@ -1,0 +1,21 @@
+@use 'src/theme' as T;
+
+.container {
+  color: T.$color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: T.$spacing-md;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: T.$spacing-nano;
+  }
+
+  h3 {
+    font-size: T.$font-size-lg;
+    font-weight: T.$font-weight-bold;
+  }
+}
