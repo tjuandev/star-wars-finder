@@ -27,7 +27,7 @@ export const Main = ({
   return (
     <main className={S.main}>
       {isLoading ? (
-        <Loader className={S.loader} />
+        <Loader className={S.loader} aria-label="loader" />
       ) : (
         data?.map(({ details, id, name }) => {
           const contentAdapted = Object.entries(details).map(([key, value]) => {

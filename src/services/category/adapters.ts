@@ -1,8 +1,10 @@
-import type { CategoryResponse } from './types'
+import type { AdaptedCategoryData, CategoryResponse } from './types'
 
 const detailsBlacklist = ['id', 'name', 'url', 'created', 'edited']
 
-export const adaptResponse = (response?: CategoryResponse) => {
+export const adaptResponse = (
+  response?: CategoryResponse
+): AdaptedCategoryData[] => {
   if (!response) return []
 
   const { results } = response
