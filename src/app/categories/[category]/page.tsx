@@ -2,12 +2,14 @@
 import S from './styles.module.scss'
 import { notFound } from 'next/navigation'
 import { categoriesList } from 'constant'
-import type { PageProps } from './types'
+import type { MainProps, PageProps } from './types'
 import { Badge, Loader, Logo } from 'components/atoms'
 import { Accordion, SearchBar } from 'components/molecules'
 import Link from 'next/link'
 import { useSearchCategory } from 'services/category'
 import { useState } from 'react'
+
+const SMALL_BADGE_LENGTH = 50
 
 const SearchHelpText = () => (
   <p className={S.search_help_text}>
@@ -15,13 +17,7 @@ const SearchHelpText = () => (
   </p>
 )
 
-export const Main = ({
-  category,
-  searchValue
-}: {
-  category: StarWarsCategories
-  searchValue: string | null
-}) => {
+export const Main = ({ category, searchValue }: MainProps) => {
   const { data, isLoading } = useSearchCategory({ category, searchValue })
 
   return (
@@ -29,10 +25,12 @@ export const Main = ({
       {isLoading ? (
         <Loader className={S.loader} aria-label="loader" />
       ) : (
-        data?.map(({ details, id, name }) => {
+        data?.map(({ details, id, name, title }) => {
           const contentAdapted = Object.entries(details).map(([key, value]) => {
+            const hasHugeText = value.length > SMALL_BADGE_LENGTH
+
             return (
-              <Badge key={key}>
+              <Badge key={key} hugeText={hasHugeText}>
                 <p className={S.badge_content}>
                   <strong>{key.replaceAll('_', ' ')}</strong>: {value}
                 </p>
@@ -40,15 +38,16 @@ export const Main = ({
             )
           })
 
-          const title = (
-            <p className={S.accordion_title}>
-              #{id}
-              <strong>{name}</strong>
-            </p>
-          )
-
           return (
-            <Accordion key={name} title={title}>
+            <Accordion
+              key={name}
+              title={
+                <p className={S.accordion_title}>
+                  #{id}
+                  <strong>{name || title}</strong>
+                </p>
+              }
+            >
               <div className={S.accordion_badges}>{contentAdapted}</div>
             </Accordion>
           )

@@ -1,6 +1,6 @@
 import type { AdaptedCategoryData, CategoryResponse } from './types'
 
-const detailsBlacklist = ['id', 'name', 'url', 'created', 'edited']
+const detailsBlacklist = ['id', 'name', 'url', 'created', 'edited', 'title']
 
 export const adaptResponse = (
   response?: CategoryResponse

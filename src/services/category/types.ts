@@ -9,9 +9,10 @@ export interface CategoryResponse {
 }
 
 export interface AdaptedCategoryData {
-  id?: string
   name: string
   details: Record<string, string>
+  id?: string
+  title?: string
 }
 
 export interface UseSearchCategoryProps {

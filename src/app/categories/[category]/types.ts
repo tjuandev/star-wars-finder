@@ -3,3 +3,8 @@ export interface PageProps {
     category?: StarWarsCategories
   }
 }
+
+export interface MainProps {
+  category: StarWarsCategories
+  searchValue: string | null
+}
