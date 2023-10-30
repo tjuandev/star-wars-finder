@@ -9,9 +9,9 @@ export interface CategoryResponse {
 }
 
 export interface AdaptedCategoryData {
-  name: string
-  details: Record<string, string>
-  id: string
+  name?: string
+  details?: Record<string, string>
+  id?: string
   title?: string
 }
 
@@ -20,7 +20,10 @@ export interface UseSearchCategoryProps {
   searchValue: string | null
 }
 
-export type useSearchParallelCategoriesProps = string[]
+export type useSearchParallelCategoriesProps = {
+  ids: Array<string | undefined>
+  category: StarWarsCategories
+}
 
 export type SearchCategoryProps = Partial<UseSearchCategoryProps> & {
   id?: string

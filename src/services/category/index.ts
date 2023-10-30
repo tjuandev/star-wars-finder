@@ -1,26 +1,29 @@
 import { httpClient } from 'lib/httpClient'
 import { useFetch, useParallelFetch } from 'lib/reactQuery'
 import type {
+  AdaptedCategoryData,
+  CategoryData,
   CategoryResponse,
   SearchCategoryProps,
   UseSearchCategoryProps,
   useSearchParallelCategoriesProps
 } from './types'
-import { adaptResponse } from './adapters'
+import {
+  adaptCategoriesResponse,
+  adaptPopularSearchesResponse
+} from './adapters'
 
-const searchCategory = async ({
+const searchCategory = async <Response = CategoryResponse>({
   category,
   searchValue,
   id
 }: SearchCategoryProps) => {
-  const { data } = await httpClient.get<CategoryResponse>(
-    `/${category}/${id}`,
-    {
-      params: {
-        search: searchValue
-      }
+  const url = id ? `/${category}/${id}` : `/${category}`
+  const { data } = await httpClient.get<Response>(url, {
+    params: {
+      search: searchValue
     }
-  )
+  })
   return data
 }
 
@@ -34,27 +37,32 @@ export const useSearchCategory = ({
     enabled: !!category && !!searchValue
   })
 
-  const data = adaptResponse(response)
-
+  const data = adaptCategoriesResponse(response)
   return { data, ...result }
 }
 
-export const useSearchParallelCategories = (
-  ids: useSearchParallelCategoriesProps
-) => {
-  const results = useParallelFetch<CategoryResponse>(
-    ids.map(id => ({
-      queryKey: ['category', id],
+export const useSearchParallelCategories = ({
+  ids = [],
+  category
+}: useSearchParallelCategoriesProps) => {
+  const results = useParallelFetch<CategoryData, AdaptedCategoryData>(
+    ids?.map(id => ({
+      queryKey: [category, id],
       queryFn: async () =>
-        await searchCategory({
-          id
+        await searchCategory<CategoryData>({
+          id,
+          category
         }),
-      enabled: !!id
+      enabled: !!id,
+      select(data) {
+        return adaptPopularSearchesResponse(data)
+      }
     }))
   )
 
-  const adaptedData = results.map(result => adaptResponse(result.data))
-  const data = adaptedData.reduce((acc, val) => acc.concat(val), [])
+  const isLoading = results.some(result => result.isLoading)
+  const data = results.length ? results.map(result => result.data) : null
+  const error = results.some(result => result.error)
 
-  return { data }
+  return { data, isLoading, error }
 }

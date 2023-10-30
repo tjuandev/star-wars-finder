@@ -40,16 +40,24 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: T.$spacing-md;
-  align-items: center;
   height: 100%;
   max-height: 500px;
   overflow: auto;
 
   .loader {
     width: 110px;
+  }
+
+  > h3 {
+    font-size: T.$font-size-lg;
+    margin-bottom: T.$spacing-md;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: T.$spacing-md;
+    align-items: center;
   }
 }
 

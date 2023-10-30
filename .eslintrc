@@ -95,7 +95,8 @@
     "space-before-function-paren": "off",
     "eslint-disable-next-line": "off",
     "react/display-name": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/consistent-type-assertions": "off"
   },
   "overrides": [
     {

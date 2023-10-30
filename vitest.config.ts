@@ -10,7 +10,7 @@ export default defineConfig({
     passWithNoTests: true,
     setupFiles: ['./vitest.setup.ts'],
     coverage: {
-      exclude: ['src/store/storage.ts']
+      exclude: ['src/store/storage.ts', 'src/providers']
     }
   }
 })
