@@ -6,14 +6,13 @@ A comprehensive search API designed to explore and discover various resources fr
 
 ## Table of Contents
 
-1. [Performance](#performance-100%)
-2. [Setup](#setup)
+1. [Setup](#setup)
   - [Running the Project Locally](#running-the-project-locally)
   - [Running Storybook](#running-storybook)
   - [Testing](#testing)
       - [Running Tests](#running-tests)
       - [Coverage Reports](#coverage-reports)
-3. [Technical Highlights](#technical-highlights-bulb)
+2. [Technical Highlights](#technical-highlights-bulb)
 
 ## Setup
 
