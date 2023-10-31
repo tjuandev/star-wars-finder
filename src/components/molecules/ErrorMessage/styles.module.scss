@@ -6,6 +6,12 @@
   flex-direction: column;
   align-items: center;
   gap: T.$spacing-md;
+  width: 80%;
+
+
+  @include T.breakpoint-min('tablet') {
+    width: 100%;
+  }
 
   > div {
     display: flex;
@@ -22,5 +28,9 @@
     @include T.breakpoint-min('tablet') {
       font-size: T.$font-size-lg;
     }
+  }
+
+  p {
+    text-align: center;
   }
 }
