@@ -61,7 +61,7 @@ export const useSearchParallelCategories = ({
   )
 
   const isLoading = results.some(result => result.isLoading)
-  const data = results.length ? results.map(result => result.data) : null
+  const data = results.map(result => result.data)
   const error = results.some(result => result.error)
 
   return { data, isLoading, error }
