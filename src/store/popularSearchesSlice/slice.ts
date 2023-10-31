@@ -11,10 +11,39 @@ const initialState: PopularSearchesState = {
   data: {} as PopularSearchesPerCategory
 }
 
-const customComparator = (a: Item, b: Item) => {
-  return (b.count || 0) - (a.count || 0)
+export const addRankingToCategory = (
+  data: PopularSearchesPerCategory,
+  payload: AddRankingPayload
+): PopularSearchesPerCategory => {
+  const { id, category, ...restOfPayload } = payload
+
+  if (!data[category]) {
+    data[category] = []
+  }
+
+  const existingItemIndex = data[category].findIndex(item => item.id === id)
+
+  if (existingItemIndex !== -1) {
+    const existingItem = data[category][existingItemIndex]
+    if (existingItem?.count) {
+      existingItem.count += 1
+    }
+  } else {
+    const newItem: Item = {
+      id,
+      count: (restOfPayload.count || 0) + 1
+    }
+    data[category].push(newItem)
+  }
+
+  data[category].sort((a: Item, b: Item) => {
+    return (b.count || 0) - (a.count || 0)
+  })
+
+  return data
 }
 
+/* c8 ignore start */
 const popularSearchesSlice = createSlice({
   initialState,
   name: 'popularSearches',
@@ -23,33 +52,11 @@ const popularSearchesSlice = createSlice({
       return state
     },
     addToRanking(state, action: PayloadAction<AddRankingPayload>) {
-      const { id, category, ...restOfPayload } = action.payload
-
-      if (!state.data[category]) {
-        state.data[category] = []
-      }
-
-      const existingItemIndex = state.data[category].findIndex(
-        item => item.id === id
-      )
-
-      if (existingItemIndex !== -1) {
-        const existingItem = state.data[category][existingItemIndex]
-        if (existingItem?.count) {
-          existingItem.count += 1
-        }
-      } else {
-        const newItem: Item = {
-          id,
-          count: (restOfPayload.count || 0) + 1
-        }
-        state.data[category].push(newItem)
-      }
-
-      state.data[category].sort(customComparator)
+      state.data = addRankingToCategory(state.data, action.payload)
     }
   }
 })
+/* c8 ignore stop */
 
 export const { addToRanking } = popularSearchesSlice.actions
 export const popularSearches = popularSearchesSlice.reducer

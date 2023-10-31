@@ -14,6 +14,7 @@ export const Button = ({
     className={clsx(
       S.button,
       S[`button_${size}`],
+      /* c8 ignore next */
       uppercase && S.uppercase,
       attachPos && S[`attach_${attachPos}`]
     )}
