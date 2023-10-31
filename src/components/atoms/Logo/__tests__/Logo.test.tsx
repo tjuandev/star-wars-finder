@@ -9,14 +9,6 @@ describe('[Component:Atoms] Logo', () => {
 
     const logoSvg = screen.getByRole('img', { name: /logo/i })
 
-    expect(logoSvg).toHaveClass(S.lg)
-  })
-
-  it('should render a medium size logo', () => {
-    renderWithProviders(<Logo size="md" />)
-
-    const logoSvg = screen.getByRole('img', { name: /logo/i })
-
-    expect(logoSvg).toHaveClass(S.md)
+    expect(logoSvg).toHaveClass(S.logo_lg)
   })
 })
