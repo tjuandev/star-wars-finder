@@ -7,7 +7,7 @@ A comprehensive search API designed to explore and discover various resources fr
 
 ## Performance 100%
 
-![Uploading image.png…]()
+![image](https://github.com/tjuandev/star-wars-finder/assets/67200208/2806dd6f-b6ac-4ff4-ab47-cf4ea7693d19)
 
 
 ## Table of Contents
