@@ -39,14 +39,6 @@ yarn dev
 yarn storybook
 ```
 
-#### Environment Variables
-
-Before running the project, make sure you set up the necessary environment variables. Create a `.env.local` file in the root directory of the project and add the following:
-
-```
-NEXT_PUBLIC_API_BASE_URL=https://swapi.dev/api/
-```
-
 #### Testing
 
 #### Running Tests
