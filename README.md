@@ -8,7 +8,7 @@ A comprehensive search API designed to explore and discover various resources fr
 
 1. [Setup](#setup)
   - [Running the Project Locally](#running-the-project-locally)
-  - [Environment Variables](#environment-variables)
+  - [Running Storybook](#running-storybook)
   - [Testing](#testing)
       - [Running Tests](#running-tests)
       - [Coverage Reports](#coverage-reports)
