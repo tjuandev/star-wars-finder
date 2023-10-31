@@ -30,6 +30,7 @@ body.sb-show-main {
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   height: 100vh;
   justify-content: flex-start;
   color: T.$color-white;

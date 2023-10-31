@@ -1,11 +1,37 @@
 @use 'src/theme' as T;
 
-.lg {
-  width: 618px;
-  height: 118px;
-}
+.logo {
+  &_lg {
+    width: 288px;
+    height: 56px;
+  }
 
-.md {
-  width: 432px;
-  height: 84px;
+  &_md {
+    width: 288px;
+    height: 56px;
+  }
+
+  @include T.breakpoint-min('tablet') {
+    &_lg {
+      width: 432px;
+      height: 84px;
+    }
+
+    &_md {
+      width: 288px;
+      height: 56px;
+    }
+  }
+
+  @include T.breakpoint-min('custom', 1200px) {
+    &_lg {
+      width: 618px;
+      height: 118px;
+    }
+
+    &_md {
+      width: 432px;
+      height: 84px;
+    }
+  }
 }

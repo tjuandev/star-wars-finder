@@ -3,7 +3,15 @@
 $common-box-shadow: 0 0 16px;
 
 @mixin box-shadow($color: rgba(255, 255, 255, 0.5)) {
-  box-shadow: $common-box-shadow $color;
+  box-shadow: 0 0 4px $color;
+
+  @include T.breakpoint-min('tablet') {
+    box-shadow: 0 0 8px $color;
+  }
+
+  @include T.breakpoint-min('desktop') {
+    box-shadow: 0 0 16px $color;
+  }
 }
 
 .container {
@@ -38,25 +46,51 @@ $common-box-shadow: 0 0 16px;
 
   border: 2px solid T.$color-black;
   position: relative;
-  width: 168px;
-  height: 240px;
+  width: 112px;
+  height: 192px;
   overflow: hidden;
   transition: box-shadow T.$base-transition;
+
+  @include T.breakpoint-min('tablet') {
+    width: 134px;
+  }
+
+  @include T.breakpoint-min('custom', 1200px) {
+    width: 168px;
+    height: 240px;
+  }
 }
 
 .img {
   transition: transform 0.3s ease-in-out;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -15%;
+  right: -25%;
   filter: saturate(0);
+
+  @include T.breakpoint-min('tablet') {
+    right: -10%;
+  }
+
+  @include T.breakpoint-min('custom', 1200px) {
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .title {
   transition: color T.$base-transition;
-  font-size: T.$font-size-lg;
   color: T.$color-white;
   font-weight: T.$font-weight-medium;
   text-transform: uppercase;
   letter-spacing: T.$font-letter-spacing-sm;
+  font-size: T.$font-size-xs;
+
+  @include T.breakpoint-min('tablet') {
+    font-size: T.$font-size-md;
+  }
+
+  @include T.breakpoint-min('desktop') {
+    font-size: T.$font-size-lg;
+  }
 }

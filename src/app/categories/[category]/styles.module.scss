@@ -9,6 +9,12 @@
   flex-direction: column;
   gap: T.$spacing-xxl;
   margin: T.$spacing-mega 0;
+  padding: 0 T.$spacing-xs;
+  overflow: hidden;
+
+  @include T.breakpoint-min('custom', 800px) {
+    padding: 0;
+  }
 
   > header,
   main {
@@ -26,9 +32,15 @@
   > h5 {
     margin-top: T.$spacing-xxl;
     margin-bottom: T.$spacing-sm;
-    font-size: T.$font-size-lg;
+    font-size: T.$font-size-sm;
     letter-spacing: T.$font-letter-spacing-sm;
     text-transform: uppercase;
+  }
+
+  @include T.breakpoint-min('desktop') {
+    > h5 {
+      font-size: T.$font-size-lg;
+    }
   }
 }
 
@@ -40,9 +52,13 @@
 }
 
 .main {
-  height: 100%;
-  max-height: 500px;
+  padding: T.$spacing-md 0;
   overflow: auto;
+
+  @include T.breakpoint-min('desktop') {
+    height: 100%;
+    max-height: 500px;
+  }
 
   .loader {
     width: 110px;

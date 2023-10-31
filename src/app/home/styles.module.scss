@@ -2,30 +2,73 @@
 
 .container {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: T.$spacing-md 0;
+
+  @include T.breakpoint-min('tablet') {
+    margin: T.$spacing-mega 0;
+    height: 100%;
+  }
+
+  @include T.breakpoint-min('custom', 1200px) {
+    margin: T.$spacing-lg 0;
+  }
+
+  @include T.breakpoint-min('custom', 1400px) {
+    margin: T.$spacing-mega 0;
+  }
 }
 
 .info_text {
-  margin-top: T.$spacing-giga;
-  font-size: T.$font-size-lg;
+  font-size: T.$font-size-xs;
   font-weight: T.$font-weight-medium;
   max-width: 526px;
   width: 100%;
   text-align: center;
   letter-spacing: T.$font-letter-spacing-lg;
+  margin-top: T.$spacing-lg;
 
   > strong {
     font-weight: T.$font-weight-bold;
     color: T.$color-yellow;
   }
+
+  @include T.breakpoint-min('tablet') {
+    font-size: T.$font-size-md;
+  }
+
+  @include T.breakpoint-min('custom', 1200px) {
+    margin-top: T.$spacing-mega;
+    font-size: T.$font-size-lg;
+  }
+
+  @include T.breakpoint-min('custom', 1400px) {
+    margin-top: T.$spacing-giga;
+  }
 }
 
 .categories {
   display: flex;
-  margin-top: T.$spacing-mega;
-  gap: T.$spacing-macro;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: T.$spacing-xs;
+  margin-top: T.$spacing-md;
+
+  @include T.breakpoint-min('tablet') {
+    gap: T.$spacing-sm;
+  }
+
+  @include T.breakpoint-min('custom', 1050px) {
+    margin-top: T.$spacing-lg;
+    gap: T.$spacing-lg;
+  }
+
+  @include T.breakpoint-min('custom', 1400px) {
+    margin-top: T.$spacing-mega;
+    gap: T.$spacing-macro;
+  }
 }

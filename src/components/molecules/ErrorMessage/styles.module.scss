@@ -15,7 +15,12 @@
   }
 
   h3 {
-    font-size: T.$font-size-lg;
+    font-size: T.$font-size-md;
     font-weight: T.$font-weight-bold;
+    text-align: center;
+
+    @include T.breakpoint-min('tablet') {
+      font-size: T.$font-size-lg;
+    }
   }
 }
