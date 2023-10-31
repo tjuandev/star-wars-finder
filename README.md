@@ -4,21 +4,16 @@ A comprehensive search API designed to explore and discover various resources fr
 
 [screen-capture (1).webm](https://github.com/tjuandev/star-wars-finder/assets/67200208/f9c63b30-d142-4760-8b0e-b42f2f946d75)
 
-
-## Performance 100%
-
-![image](https://github.com/tjuandev/star-wars-finder/assets/67200208/2806dd6f-b6ac-4ff4-ab47-cf4ea7693d19)
-
-
 ## Table of Contents
 
-1. [Setup](#setup)
+1. [Performance](#performance-100%)
+2. [Setup](#setup)
   - [Running the Project Locally](#running-the-project-locally)
   - [Running Storybook](#running-storybook)
   - [Testing](#testing)
       - [Running Tests](#running-tests)
       - [Coverage Reports](#coverage-reports)
-2. [Technical Highlights](#technical-highlights-bulb)
+3. [Technical Highlights](#technical-highlights-bulb)
 
 ## Setup
 
