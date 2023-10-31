@@ -62,9 +62,9 @@ yarn test:c
 
 ## Technical Highlights :bulb:
 
-- :atom_symbol: **Atomic Design**: We've structured our components based on the principles of Atomic Design, ensuring modularity and reusability.
+- :atom_symbol: **Atomic Design**: I've structured the components based on the principles of Atomic Design, ensuring modularity and reusability.
   
-- :art: **SASS**: For improved performance and easier maintenance, we've employed SASS for styling.
+- :art: **SASS**: For improved performance and easier maintenance, i've employed SASS for styling.
   
 - :book: **Storybook**: Every component is attached with its respective Storybook, allowing for easier visualization and testing.
   
