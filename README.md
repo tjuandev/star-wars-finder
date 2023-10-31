@@ -4,6 +4,12 @@ A comprehensive search API designed to explore and discover various resources fr
 
 [screen-capture (1).webm](https://github.com/tjuandev/star-wars-finder/assets/67200208/f9c63b30-d142-4760-8b0e-b42f2f946d75)
 
+
+## Performance 100%
+
+![Uploading image.png…]()
+
+
 ## Table of Contents
 
 1. [Setup](#setup)
