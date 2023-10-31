@@ -17,13 +17,19 @@ type PopularProps = {
   category: StarWarsCategories
 }
 
+const LoaderBar = () => (
+  <div className={S.loader}>
+    <Loader />
+  </div>
+)
+
 const SearchedItems = ({ category, searchValue }: MainProps) => {
   const { data, isLoading, error } = useSearchCategory({
     category,
     searchValue
   })
 
-  if (isLoading) return <Loader />
+  if (isLoading) return <LoaderBar />
 
   const isDataEmpty = data.length === 0
   if (error || isDataEmpty) {
@@ -47,12 +53,7 @@ const PopularItems = ({ category }: PopularProps) => {
     category
   })
 
-  if (isLoading)
-    return (
-      <div className={S.loader}>
-        <Loader />
-      </div>
-    )
+  if (isLoading) return <LoaderBar />
 
   const isDataEmpty = data?.length === 0
   if (error || isDataEmpty) {
