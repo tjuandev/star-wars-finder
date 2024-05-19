@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "jsxImportSource": "react",
     "removeComments": true,
-    "sourceMap": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -29,12 +28,13 @@
     "declaration": true,
     "skipLibCheck": true,
     "incremental": true,
+    "sourceMap": false,
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "types": ["vite/client", "vitest/globals"],
+    "types": ["vite/client", "vitest/globals", "cypress"],
     "paths": {
       "@/*": ["../*"]
     }
@@ -45,7 +45,9 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "src/@types/**/*.d.ts",
-    "./vitest.setup.ts"
+    "./vitest.setup.ts",
+    "./cypress.config.ts",
+    "cypress"
   ],
   "exclude": ["node_modules", ".next", "src/**/*.js"]
 }

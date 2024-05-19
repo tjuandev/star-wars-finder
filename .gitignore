@@ -42,3 +42,5 @@ tsconfig.tsbuildinfo
 .husky
 
 .yarn
+
+cypress.env.json
