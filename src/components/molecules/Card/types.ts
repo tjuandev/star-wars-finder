@@ -5,4 +5,5 @@ export type CardProps = {
   href: string
   imgWidth?: number
   imgHeight?: number
+  dataCy?: string
 }

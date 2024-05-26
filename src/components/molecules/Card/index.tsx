@@ -9,9 +9,10 @@ export const Card = ({
   title,
   imgHeight,
   imgWidth,
-  href
+  href,
+  dataCy
 }: CardProps) => (
-  <Link href={href} className={S.container}>
+  <Link href={href} className={S.container} data-cy={dataCy}>
     <div className={S.card}>
       <Image
         src={src}

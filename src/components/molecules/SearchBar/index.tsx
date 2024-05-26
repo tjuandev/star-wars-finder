@@ -22,8 +22,14 @@ export const SearchBar = ({
           className={S.input}
           type="search"
           placeholder={placeholder}
+          data-cy="search-input"
         />
-        <Button type="submit" attachPos="left" icon={<LightsaberIcon />}>
+        <Button
+          type="submit"
+          attachPos="left"
+          icon={<LightsaberIcon />}
+          data-cy="search-button"
+        >
           Search
         </Button>
       </div>

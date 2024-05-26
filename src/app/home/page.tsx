@@ -13,6 +13,7 @@ const Categories = () => {
           title={title}
           alt={`${title}'s image`}
           href={`/categories/${title}`}
+          dataCy={`category-${title.toLowerCase()}`}
         />
       ))}
     </div>
