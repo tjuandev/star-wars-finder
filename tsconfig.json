@@ -34,7 +34,7 @@
         "name": "next"
       }
     ],
-    "types": ["vite/client", "vitest/globals", "cypress"],
+    "types": ["vite/client", "vitest/globals"],
     "paths": {
       "@/*": ["../*"]
     }
@@ -45,9 +45,14 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "src/@types/**/*.d.ts",
-    "./vitest.setup.ts",
-    "./cypress.config.ts",
-    "cypress"
+    "./vitest.setup.ts"
   ],
-  "exclude": ["node_modules", ".next", "src/**/*.js"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "src/**/*.js",
+    "./cypress.config.ts",
+    "cypress",
+    "cypress/**/*"
+  ]
 }

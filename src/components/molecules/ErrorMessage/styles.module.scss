@@ -8,7 +8,6 @@
   gap: T.$spacing-md;
   width: 80%;
 
-
   @include T.breakpoint-min('tablet') {
     width: 100%;
   }
